@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.shortcuts import get_object_or_404
 from .forms import *
 from . import models
@@ -20,8 +20,14 @@ def lead_detail(request, pk):
     return render(request, 'details.html', context)
 
 def lead_create(request):
-    print(request.POST)
+    forms = LeadModelForm()
+    if request.method == "POST":
+        form = LeadModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/leads")
+
     context = {
-        "forms": LeadForm
+        "forms": forms
     }
     return render(request, "create.html", context)
