@@ -19,14 +19,14 @@ class LeadDetailView(DetailView):
     context_object_name = "lead"
 
 class LeadCreateView(CreateView):
-    template_name = "create.html"
+    template_name = "leads/create.html"
     form_class = LeadModelForm
 
     def get_success_url(self):
         return reverse("leads:lists")   
 
 class LeadUpdateView(UpdateView):
-    template_name = "update.html"
+    template_name = "leads/update.html"
     form_class = LeadModelForm
     queryset = models.Lead.objects.all()
 
@@ -34,7 +34,7 @@ class LeadUpdateView(UpdateView):
         return reverse("leads:lists")
 
 class LeadDeleteView(DeleteView):
-    template_name = "delete.html"
+    template_name = "leads/delete.html"
     queryset = models.Lead.objects.all()
 
     def get_success_url(self):
