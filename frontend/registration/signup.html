@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} ShopCRM SignUp {% endblock %}
+
+{% block content %}
+
+
+    <form method="post">
+        <p>
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <button type="submit">SignUp</button>
+    </form>
+
+{% endblock %}

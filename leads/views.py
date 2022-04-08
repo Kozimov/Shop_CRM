@@ -5,6 +5,13 @@ from django.views.generic import TemplateView, ListView, DetailView, CreateView,
 from .forms import *
 from . import models
 
+class SignupView(CreateView):
+    template_name = "registration/signup.html"
+    form_class = NewUserForm
+
+    def get_success_url(self):
+        return reverse("leads:lists") 
+
 class HomeView(TemplateView):
     template_name = "home.html"
 
