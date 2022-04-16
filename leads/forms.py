@@ -27,7 +27,7 @@ class NewUserForm(UserCreationForm):
         field_classes = {'username': UsernameField}
 
 class AssignAgentForm(forms.Form):
-    agent = forms.ModelChoiceField(queryset=Agent.objects.null())
+    agent = forms.ModelChoiceField(queryset=Agent.objects.none())
 
     def __init__(self, *args, **kwargs):
         request = kwargs.pop("request")
