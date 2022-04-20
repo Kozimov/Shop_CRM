@@ -27,7 +27,7 @@
 
             {% for category in categories %}
             <tr>
-              <td class="px-4 py-3">{{ category.nomi }}</td>
+              <td class="px-4 py-3"><a href="{% url 'leads:category' category.pk %}">{{ category.nomi }}</a></td>
               <td class="px-4 py-3">soni</td>
             </tr>
             {% endfor %}

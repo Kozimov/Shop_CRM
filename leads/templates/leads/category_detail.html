@@ -21,9 +21,9 @@
           <tbody>
 
 
-            {% for category in categories %}
+            {% for lead in category.leads.all %}
             <tr>
-              <td class="px-4 py-3">{{ category.ismi }}</td>
+              <td class="px-4 py-3">{{ lead.ismi }}</td>
               <td class="px-4 py-3">soni</td>
             </tr>
             {% endfor %}
