@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load tailwind_filters %}
 
 {% block title %}  Agent aniqlash {% endblock %}
 
@@ -9,7 +10,7 @@
     <form method="post">
         <p>
         {% csrf_token %} 
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button type="submit">Jo'natish</button>
     </form>
 {% endblock %}
